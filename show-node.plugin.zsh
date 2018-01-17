@@ -9,9 +9,11 @@ show-version() {
     | sed 's/[",]//g' \
     | tr -d '[[:space:]]')
 
-    if [[${PACKAGE_VERSION} != *"node"*]]
-    then 
-      printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" $PACKAGE_NAME "$PACKAGE_VERSION"
-    fi
+    case *"node"* in
+      $PACKAGE_VERSION)
+	printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" $PACKAGE_NAME "$PACKAGE_VERSION"
+	return 0;
+    esac
+    return 0;
   fi
 }
