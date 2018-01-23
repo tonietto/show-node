@@ -9,6 +9,6 @@ show-node() {
     | sed 's/[",]//g' \
     | tr -d '[[:space:]]')
 
-    printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" "required node" "$PACKAGE_VERSION"
+    printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" "node" "$PACKAGE_VERSION ($(node --version))"
   fi
 }
